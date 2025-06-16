@@ -11,8 +11,8 @@ main :: proc() {
     //test.loki(100)   
     
     //*******Run Program********
-    run.loki(10)
+    //run.loki(10)
 
-    //*******CLI Build********
-    //cli.loki()
+    //********CLI Build*********
+    cli.loki()
 }

@@ -4,6 +4,7 @@ import "core:math/rand"
 import "core:fmt"
 import "core:time"
 import "core:encoding/json"
+import "core:encoding/cbor"
 
 male_first_name_list: [12]string = {"Ahren", "Borlen", "Jhurin", "Pytr", "Tyril", "Thorin", "Dhurgan", "Khorin", "Korwin", "Garlis", "Tanis", "Gharland"}
 female_first_name_list: [12]string = {"Gwen", "Briala", "Calin", "Nora", "Aria", "Elyra", "Fenya", "Halia", "Sehrin", "Telyah", "Khorrina", "Kaara"}
@@ -273,4 +274,15 @@ marshal_npcs :: proc(count: int) -> (json_data: []byte, err: json.Marshal_Error)
         append(&npcs, generate_npc())
     }
     return json.marshal(npcs[:], json.Marshal_Options{pretty = true, use_enum_names = true})
+}
+
+marshal_npcs_cbor :: proc(count: int) -> (cbor_data: []byte, err: cbor.Marshal_Error) {
+    npcs := make([dynamic]NPC, 0, count, context.allocator)
+    defer delete(npcs)
+
+    for i in 0..<count {
+        append(&npcs, generate_npc())
+    }
+
+    return cbor.marshal(npcs[:])
 }

@@ -65,6 +65,7 @@ loki :: proc() {
     case "test":
         test.loki(count)
     case "run":
-        run.loki(count)
+        //run.loki(count)
+        run.loki_cbor(count)
     }
 }

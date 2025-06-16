@@ -13,3 +13,4 @@ loki :: proc(count: int) {
     elapsed := time.since(start)
     fmt.printf("Finished in %v\n", elapsed)
 }
+
