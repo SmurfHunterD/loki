@@ -266,7 +266,7 @@ print_npc :: proc(n: NPC) {
     fmt.printf("        Agility:      %d\n", n.stats.agility)
 }
 
-marshal_npcs :: proc(count: int) -> (json_data: []byte, err: json.Marshal_Error) {
+marshal_npcs_json :: proc(count: int) -> (json_data: []byte, err: json.Marshal_Error) {
     npcs := make([dynamic]NPC, 0, count, context.allocator)
     defer delete(npcs)
 

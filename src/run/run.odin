@@ -6,10 +6,10 @@ import "core:fmt"
 import "../npc"
 
 
-loki :: proc(count: int) {
+loki_json :: proc(count: int) {
     // Generate and marshal NPCs to JSON
     start := time.now()
-    if json_data, err := npc.marshal_npcs(count); err == nil {
+    if json_data, err := npc.marshal_npcs_json(count); err == nil {
         defer delete(json_data)
         
         filename := "npcs.json"
