@@ -7,7 +7,7 @@ import "../run"
 import "../test"
 
 show_help :: proc() {
-    fmt.println("Loki is an NPC generator that writes a list of generated npcs to a .json file")
+    fmt.println("Loki is an NPC generator that marshals a list of generated npcs to a cbor")
     fmt.println("Loki CLI - Usage:")
     fmt.println("  ./loki [flags]")
     fmt.println()
@@ -18,13 +18,13 @@ show_help :: proc() {
     fmt.println("  --count <n> or -c <n> Set iteration count (default: 100)")
     fmt.println()
     fmt.println("Examples:")
-    fmt.println("  ./loki                  # Run with default count (100)")
-    fmt.println("  ./loki --test           # Run tests with count=100")
-    fmt.println("  ./loki --count 500      # Run with count=500")
-    fmt.println("  ./loki --test --count 200 # Run tests with count=200")
-    fmt.println("  ./loki -t           # Run tests with count=100")
-    fmt.println("  ./loki -c 500      # Run with count=500")
-    fmt.println("  ./loki -t -c 200 # Run tests with count=200")
+    fmt.println("  loki                  # Run with default count (100)")
+    fmt.println("  loki --test           # Run tests with count=100")
+    fmt.println("  loki --count 500      # Run with count=500")
+    fmt.println("  loki --test --count 200 # Run tests with count=200")
+    fmt.println("  loki -t           # Run tests with count=100")
+    fmt.println("  loki -c 500      # Run with count=500")
+    fmt.println("  loki -t -c 200 # Run tests with count=200")
 }
 
 loki :: proc() {
