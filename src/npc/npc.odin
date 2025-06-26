@@ -260,7 +260,7 @@ print_npc :: proc(n: NPC) {
     fmt.printf("     Stats:\n")
     fmt.printf("         Health:      %d\n", n.stats.health)
     fmt.printf("        Stamina:      %d\n", n.stats.stamina)
-    fmt.printf("   Intelligence:      %d\n", n.stats.stamina)
+    fmt.printf("   Intelligence:      %d\n", n.stats.intelligence)
     fmt.printf("           Mana:      %d\n", n.stats.mana)
     fmt.printf("       Strength:      %d\n", n.stats.strength)
     fmt.printf("        Agility:      %d\n", n.stats.agility)
